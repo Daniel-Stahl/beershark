@@ -13,6 +13,6 @@ feature "signing in" do
 		visit root_path
 		click_link "Sign in"
 		fill_in_signin_fields
-		expect(page).to have_content("Signed in successfully. Sign in Welcome")
+		expect(page).to have_content("Signed in successfully.")
 	end
 end
