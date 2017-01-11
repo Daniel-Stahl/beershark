@@ -23,13 +23,17 @@ ActiveRecord::Schema.define(version: 20170111213856) do
   end
 
   create_table "bars", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "bar_keep_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["bar_keep_id"], name: "index_bars_on_bar_keep_id", using: :btree
   end
 
   create_table "beers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "bar_keep_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["bar_keep_id"], name: "index_beers_on_bar_keep_id", using: :btree
   end
 
   create_table "favorites", force: :cascade do |t|

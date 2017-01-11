@@ -1,9 +1,9 @@
 class Beer < ApplicationRecord
 	belongs_to :bar_keep
 
-	has_many :review
-	has_many :favorite
+	has_many :reviews
+	has_many :favorites
 
-	validates_presence_of :review
-	validates_presence_of :favorite
+	validates_presence_of :reviews
+	validates_presence_of :favorites
 end
