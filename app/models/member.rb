@@ -6,4 +6,6 @@ class Member < ApplicationRecord
 
   has_one :patron
   has_one :bar_keep
+
+  validates_presence_of :first_name, :last_name
 end
