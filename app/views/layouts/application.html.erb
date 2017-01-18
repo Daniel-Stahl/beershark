@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TippleApp</title>
+    <title>Beershark</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,14 +9,13 @@
   </head>
 
   <body>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+    <% unless notice.blank? %>
+      <%= notice %>
+    <% end %>
 
-  <% if hacker_signed_in? %>
-    <%= link_to "Sign Out", destroy_hacker_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to('Sign in', new_hacker_session_path) %>
-  <% end %>
+    <% unless alert.blank? %>
+      <%= alert %>
+    <% end %>
 
     <%= yield %>
   </body>
