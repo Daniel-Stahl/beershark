@@ -4,8 +4,8 @@ class BarKeep < ApplicationRecord
   	has_many :bars
   	has_many :beers
 
-	validates_presence_of :bars
-	validates_presence_of :beers
+  	validates_presence_of :bio
+  	validates_presence_of :member
 
 	has_attached_file :profile_pic,
 		styles: { small: "100x100#" },

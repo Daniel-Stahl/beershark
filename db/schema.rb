@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170118214324) do
+ActiveRecord::Schema.define(version: 20170119000951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "btree_gin"
 
   create_table "bar_keeps", force: :cascade do |t|
     t.integer  "member_id"
@@ -23,6 +24,8 @@ ActiveRecord::Schema.define(version: 20170118214324) do
     t.string   "profile_pic_content_type"
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
+    t.string   "company_name"
+    t.text     "bio"
     t.index ["member_id"], name: "index_bar_keeps_on_member_id", using: :btree
   end
 
@@ -30,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170118214324) do
     t.integer  "bar_keep_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
     t.index ["bar_keep_id"], name: "index_bars_on_bar_keep_id", using: :btree
   end
 
@@ -37,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170118214324) do
     t.integer  "bar_keep_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "name"
     t.index ["bar_keep_id"], name: "index_beers_on_bar_keep_id", using: :btree
   end
 
@@ -63,22 +68,18 @@ ActiveRecord::Schema.define(version: 20170118214324) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "email",                    default: "", null: false
-    t.string   "encrypted_password",       default: "", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",            default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.string   "profile_pic_file_name"
-    t.string   "profile_pic_content_type"
-    t.integer  "profile_pic_file_size"
-    t.datetime "profile_pic_updated_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
     t.index ["email"], name: "index_members_on_email", unique: true, using: :btree

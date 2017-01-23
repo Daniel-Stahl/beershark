@@ -20,6 +20,6 @@ feature "signing in" do
 		profile_pic_path = 'spec/fixtures/profile_pic.jpg'
 		attach_file "profile[profile_pic]", profile_pic_path
 		profile = Profile.last
-		expect(profile).to have_attributes(profile_ppic_file_name: a_value)
+		expect(profile).to have_attributes(profile_pic_file_name: "profile_pic.jpg")
 	end
 end

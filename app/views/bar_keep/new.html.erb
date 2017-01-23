@@ -1,0 +1,23 @@
+Create a new Profile
+
+<%= form_for @bar_keep, url: {action: "create"} do |f| %>
+
+  <% if @bar_keep.errors.any? %>
+    <div id="error_explanation">
+      <h2>Oops! We couldn't create your profile.  Please see below.</h2>
+
+      <ul>
+      <% @bar_keep.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <%= f.label :bio %><br>
+  <%= f.text_area :bio %><br>
+  
+  <%= f.submit %>
+
+<% end %>

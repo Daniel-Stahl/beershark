@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe BarKeep, type: :model do
-  it { should validate_presence_of(:bars) }
-  it { should validate_presence_of(:beers) }
-  it { should belong_to(:member) }
+  describe "validations" do
+	 it "has a valid factory" do
+	   expect(FactoryGirl.create(:bar_keep)).to be_valid
+	 end
+
+	 it { should validate_presence_of(:bio) }
+	 it { should validate_presence_of(:member) }
+	end
+
+	describe "associations" do
+	  it { should belong_to(:member) }
+	end
 end

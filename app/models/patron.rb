@@ -5,6 +5,5 @@ class Patron < ApplicationRecord
 	has_many :favorite
 
 	validates_presence_of :member
-	validates_presence_of :review
-	validates_presence_of :favorite
+	
 end

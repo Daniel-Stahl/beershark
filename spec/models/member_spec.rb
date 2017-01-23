@@ -12,4 +12,8 @@ RSpec.describe Member, type: :model do
   	it { should validate_presence_of(:password) }
   	
   end
+
+  describe "associations" do
+    it { should have_one(:bar_keep) }
+  end
 end

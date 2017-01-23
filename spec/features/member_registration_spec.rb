@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "member registers for site" do
 	scenario "host registers" do
 		visit root_path
-		click_link "Become a Barkeep"
+		click_link "Become a Member"
 		fill_in_registration_fields
 		expect(page).to have_content("Welcome! You have signed up successfully.")
 	end
