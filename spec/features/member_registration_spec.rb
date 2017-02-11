@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "member registers for site" do
-	scenario "host registers" do
+	scenario "user registers" do
 		visit root_path
 		click_link "Become a Member"
 		fill_in_registration_fields

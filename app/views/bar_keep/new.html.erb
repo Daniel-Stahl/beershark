@@ -14,10 +14,17 @@ Create a new Profile
     </div>
   <% end %>
 
-  
+  <%= f.label :company_name %><br>
+  <%= f.text_field :company_name %><br>
+
   <%= f.label :bio %><br>
   <%= f.text_area :bio %><br>
+
+  <%= f.label :profile_pic %><br>
+  <%= f.file_field :profile_pic %><br>  
   
   <%= f.submit %>
+  <br>
+  <%= link_to "Cancel", :back %>
 
 <% end %>
