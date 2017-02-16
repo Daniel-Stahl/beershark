@@ -1,3 +1,17 @@
-<h1>Welcome</h1>
+<div id="background">
+	<header class="cf">
+		<div class="wrapper_wide">
+			<%= link_to "Beershark", root_path, id: "logo" %>
+			<nav>
+				<ul>
+					<li>Explore</li>
+					<li><%= link_to "Sign In", new_member_session_path %></li>
+				</ul>
+			</nav>
+		</div>
+	<div class="wrapper_skinny">
+		<h1>Hunt down your next favorite beer!</h1>
+		<%= link_to "Join the frenzy!", new_member_registration_path, class: "button button_highlight" %>
+	</div>
+</div>
 
-<%= link_to "Become a member", new_member_registration_path %>

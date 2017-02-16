@@ -2,25 +2,25 @@
 <html>
   <head>
     <title>Beershark</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% if member_signed_in? %>
-      <%= render "shared/logged_in_header" %>
-    <% else %>
-      <%= render "shared/logged_out_header" %>
-    <% end %>
-
     <% unless notice.blank? %>
       <%= notice %>
     <% end %>
 
     <% unless alert.blank? %>
       <%= alert %>
+    <% end %>
+
+    <% unless current_page?(root_path) %>
+      <%= render 'shared/header'; %>
     <% end %>
 
     <%= yield %>

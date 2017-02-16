@@ -1,0 +1,17 @@
+
+<header id="main_header" class="cf">
+	<div class="wrapper_wide">
+		<%= link_to "Beershark", root_path, id: "logo" %>
+		<nav>
+			<ul>
+				<% unless member_signed_in? %>
+					<li> Explore </li>
+					<li><%= link_to "Sign In", new_member_session_path %></li>
+				<% else %>
+					<li> Explore </li>
+					<li><%= link_to "Sign Out", destroy_member_session_path, method: :delete %></li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</header>
