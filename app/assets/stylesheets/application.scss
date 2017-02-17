@@ -12,7 +12,7 @@
  */
 
 $white: #FFFFFF;
-$highlight: #5CAB7D;
+$highlight: #685BAF;
 $dark: #22292e;
 $light: #EDEFF5;
 
@@ -24,6 +24,11 @@ a.button {
     color: $white;
     text-decoration: none;
 	&:hover {
+    	color: $white; 
+     	text-decoration: none; 
+     	cursor: pointer;  
+	}
+	&:focus {
     	color: $white; 
      	text-decoration: none; 
      	cursor: pointer;  
@@ -57,7 +62,7 @@ a.button {
 .button {
 	color: $white;
 	text-decoration: none;
-	font-size: 2.5rem;
+	font-size: 1rem;
 	padding: 1rem 2rem;
 	border-radius: 2rem;
 	outline: none;
@@ -74,8 +79,66 @@ a.button {
 	}
 }
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+
+.button_block {
+	display: block;
+	margin: 0 auto;
+}
+
+#main_header {
+	color: $dark;
+	background: $white;
+	padding: 2.5rem 0;
+	#logo {
+		float: left;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $dark;
+		text-decoration: none;
+	}
+	nav {
+		float: right;
+		ul {
+			list-style: none;
+			margin: 0;
+			li {
+				display: inline;
+				margin-left: 2.5rem;
+				a {
+					color: $dark;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.field {
+	width: 50%;
+	margin: 0 auto;
+}
+
+input[type="email"], input[type="text"], input[type="password"], {
+	width: 100%;
+	height: 2.5rem;
+	padding: .25rem 1rem;
+	background: $light;
+	border: 1px solid darken($light, 5%);
+	border-radius: .35rem;
+	margin-top: .5rem;
+	margin-bottom: 1rem;
+}
+
+#form {
+	padding: 0 0 5rem 0;
+	margin-top: 10%;
+	h2 {
+		text-align: center;
+	}
+}
+
+/*@import "bootstrap-sprockets";
+@import "bootstrap";*/
 @import "font-awesome";
 @import 'normalize';
 @import 'home';
