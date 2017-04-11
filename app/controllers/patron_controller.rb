@@ -32,6 +32,6 @@ class PatronController < ApplicationController
     end
 
     def profile_params
-      params.require(:patron).permit(:bio, :member_id)
+      params.require(:patron).permit(member_id, :bio, :first_name, :last_name)
     end
 end

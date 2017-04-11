@@ -2,27 +2,46 @@
 <html>
   <head>
     <title>Beershark</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/paper_img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link href="bootstrap3/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/ct-paper.css" rel="stylesheet"/>
+        
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet" type='text/css'>
   </head>
 
   <body>
-    <% unless notice.blank? %>
-      <%= notice %>
-    <% end %>
-
-    <% unless alert.blank? %>
-      <%= alert %>
-    <% end %>
-
-    <% unless current_page?(root_path) %>
-      <%= render 'shared/header'; %>
+    <% if alert %>
+      <div id="alert_wrapper">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% elsif notice %>
+      <div id="notice_wrapper">
+        <p class="notice"><%= notice %></p>
+      </div>  
     <% end %>
 
     <%= yield %>
+
+    <script>
+      $(document).ready(function() {
+        setTimeout(function() {
+          $('#notice_wrapper, #alert_wrapper').fadeOut("slow", function() {
+          $this.remove();
+          });
+        }, 4000 );
+      });
+    </script>
   </body>
 </html>

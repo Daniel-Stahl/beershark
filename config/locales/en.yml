@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+
+helpers:
+    label:
+      bar_keep:
+        tavern_name: "Tavern Name"

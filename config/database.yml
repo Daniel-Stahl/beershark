@@ -23,7 +23,14 @@ test:
   database: db/tipple_app_test
   host: localhost
 
+staging:
+ <<: *default
+ database: beershark_staging
+ username: deploy
+ password: <%= ENV["DATABASE_PASSWORD" ] %>
+
 production:
-  <<: *default
-  database: db/tipple_app_production
-  host: localhost
+ <<: *default
+ database: beershark_production
+ username: deploy
+ password: <%= ENV["DATABASE_PASSWORD" ] %>

@@ -53,6 +53,6 @@ class BarKeepController < ApplicationController
     end
 
     def profile_params
-      params.require(:bar_keep).permit(:member_id, :bio, :profile_pic, :company_name)
+      params.require(:bar_keep).permit(:member_id, :bio, :profile_pic, :company_name, :phone, :website, :instagram, :facebook, :twitter)
     end
 end

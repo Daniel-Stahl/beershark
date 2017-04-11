@@ -1,5 +1,9 @@
-<h1>Choose a profile</h1>
-
-<%= link_to "Become a Bar Keep", new_bar_keep_path %>
-
-<%= link_to "Become a Patron", new_patron_path %>
+<header class="cf">
+	<div class="wrapper_skinny">
+		<div class="profile_select">	
+			<h1>Select an account you would like to make</h1>
+			<%= link_to "Patron", new_patron_path, class: "button button_highlight button_one" %>
+			<%= link_to "Business", new_bar_keep_path, class: "button button_highlight button_two" %>
+		</div>	
+	</div>
+</header>	

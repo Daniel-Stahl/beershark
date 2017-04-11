@@ -56,7 +56,10 @@ group :development, :test do
     gem 'simple_bdd'
     gem 'shoulda-matchers'
     gem 'spring'
-    gem 'listen' 
+    gem 'listen'
+    gem 'capistrano', '~> 3.8'
+    gem 'capistrano-rails', '~> 1.2', '>= 1.2.3'
+    gem 'capistrano-passenger'
   end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
