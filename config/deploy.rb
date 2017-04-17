@@ -2,10 +2,16 @@
 lock "3.8.0"
 
 set :application, "beershark"
-set :repo_url, "git@example.com:Daniel-Stahl/beershark.git"
+set :repo_url, "git@github.com:Daniel-Stahl/beershark.git"
 
 set :user, "deploy"
 set :stages, %w(production staging)
+
+set :rbenv_type, :user
+set :rbenv_ruby, '2.3.4'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -26,7 +32,7 @@ set :stages, %w(production staging)
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", "config/secrets.yml"
 
-Default value for linked_dirs is []
+#Default value for linked_dirs is []
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 # Default value for default_env is {}

@@ -28,7 +28,6 @@ set :branch, "master"
 set :rails_env, "staging"
 set :deploy_to, "/var/www/beershark_staging"
 
-
 # Configuration
 # =============
 # You can set any configuration variable like in config/deploy.rb
