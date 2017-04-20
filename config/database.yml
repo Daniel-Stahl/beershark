@@ -26,11 +26,11 @@ test:
 staging:
  <<: *default
  database: beershark_staging
- username: postgres
+ username: deploy
  password: <%= ENV["DATABASE_PASSWORD" ] %>
 
 production:
  <<: *default
  database: beershark_production
- username: postgres
+ username: deploy
  password: <%= ENV["DATABASE_PASSWORD" ] %>
